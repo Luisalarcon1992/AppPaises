@@ -1,6 +1,9 @@
-<main class="flex flex-row justify-center items-center m-3 gap-40">
-  <div>
+<main class="flex flex-row">
+  <div class="flex-grow-0 flex-shrink-0 w-auto min-w-0">
     <shared-sidebar></shared-sidebar>
   </div>
-  <router-outlet></router-outlet>
+  <div class="relative w-full min-h-[1px] px-[15px]">
+    <router-outlet></router-outlet>
+
+  </div>
 </main>
