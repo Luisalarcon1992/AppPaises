@@ -4,11 +4,12 @@
 
 <section class="flex flex-wrap ">
   <article class="relative w-full">
-    <shared-search-box (search)="searchByCapital($event)" placeholder="Buscar por capital..."></shared-search-box>
+    <shared-search-box (ondebouncer)="searchByCapital($event)" placeholder="Buscar por capital..."></shared-search-box>
   </article>
 
   <article class="relative w-full">
     <hr>
     <country-table [countries]="country">asd</country-table>
   </article>
+  <shared-loading-spinner *ngIf="isLoading"></shared-loading-spinner>
 </section>

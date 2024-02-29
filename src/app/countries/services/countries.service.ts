@@ -11,6 +11,13 @@ export class CountriesService {
 
   private _urlApi: string = 'https://restcountries.com/v3.1';
 
+  private getCountriesRequest( url : string ): Observable<ICountry[]> {
+    return this.http.get<ICountry[]>(url)
+    .pipe(
+      catchError(()=> of ())
+    );
+  }
+
   searchByAlphaCode( id: string): Observable<ICountry | null> {
 
     return this.http.get<ICountry[]>(`${this._urlApi}/alpha/${id}`)
@@ -22,25 +29,20 @@ export class CountriesService {
 
   searchCapital( capital: string): Observable<ICountry[]> {
 
-    return this.http.get<ICountry[]>(`${this._urlApi}/capital/${capital}`)
-    .pipe(
-      catchError(()=> of ([]))
-    );
+    const url = `${this._urlApi}/capital/${capital}`;
+    return this.getCountriesRequest(url);
 
   }
 
   searchCountry( country: string): Observable<ICountry[]> {
-    return this.http.get<ICountry[]>(`${this._urlApi}/name/${country}`)
-    .pipe(
-      catchError(()=> of ([]))
-    );
+
+    const url = `${this._urlApi}/name/${country}`;
+    return this.getCountriesRequest(url);
   }
 
   searchRegion( region: string): Observable<ICountry[]> {
-    return this.http.get<ICountry[]>(`${this._urlApi}/region/${region}`)
-    .pipe(
-      catchError(()=> of ([]))
-    )
+    const url = `${this._urlApi}/region/${region}`;
+    return this.getCountriesRequest(url);
   }
 
 }
