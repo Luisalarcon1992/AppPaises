@@ -12,10 +12,15 @@ export class ByCapitalPageComponent {
 
   constructor(private countriesService: CountriesService) {}
 
-  public country: ICountry[] = []
+  public country: ICountry[] = [];
 
   searchByCapital(search: string):void {
 
-    this.countriesService.searchCapital(search).subscribe(countries => this.country = countries)
+    this.countriesService.searchCapital(search).subscribe(countries => {
+      this.country = countries;
+
+    })
   }
+
+
 }

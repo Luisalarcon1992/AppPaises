@@ -1,15 +1,14 @@
-<h2>Por Capital</h2>
+<h2 class="p-3">Por Capital</h2>
 <hr>
 
 
 <section class="flex flex-wrap ">
   <article class="relative w-full">
-    <shared-search-box (search)="searchByCapital($event)"></shared-search-box>
+    <shared-search-box (search)="searchByCapital($event)" placeholder="Buscar por capital..."></shared-search-box>
   </article>
-</section>
-<section class="flex flex-wrap ">
+
   <article class="relative w-full">
     <hr>
-    Resultado de búsqueda
+    <country-table [countries]="country">asd</country-table>
   </article>
 </section>

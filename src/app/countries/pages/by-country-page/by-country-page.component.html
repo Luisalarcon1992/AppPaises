@@ -1,1 +1,14 @@
-<p>by-country-page works!</p>
+<h2 class="p-3">Por País</h2>
+<hr>
+
+
+<section class="flex flex-wrap ">
+  <article class="relative w-full">
+    <shared-search-box (search)="searchByCountry($event)" placeholder="Buscar por país..."></shared-search-box>
+  </article>
+
+  <article class="relative w-full">
+    <hr>
+    <country-table [countries]="country">asd</country-table>
+  </article>
+</section>
