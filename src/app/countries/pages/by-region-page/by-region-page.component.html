@@ -3,8 +3,14 @@
 
 
 <section class="flex flex-wrap ">
-  <article class="relative w-full">
-    <shared-search-box (search)="searchByRegion($event)" placeholder="Buscar por región..."></shared-search-box>
+  <article class="relative w-full flex flex-row gap-3 justify-start">
+    <!-- <shared-search-box (search)="searchByRegion($event)" placeholder="Buscar por región..."></shared-search-box> -->
+    <button *ngFor="let region of regions" class="p-2 my-2" (click)="searchByRegion(region)" [ngClass]="{'bg-blue-300 border border-solid border-blue-700 rounded' :
+    selectedRegion === region
+
+    }">
+      {{ region }}
+    </button>
   </article>
 
   <article class="relative w-full">
