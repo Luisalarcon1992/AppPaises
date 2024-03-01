@@ -4,7 +4,8 @@
 
 <section class="flex flex-wrap ">
   <article class="relative w-full">
-    <shared-search-box (search)="searchByCountry($event)" placeholder="Buscar por país..."></shared-search-box>
+    <shared-search-box (ondebouncer)="searchByCountry($event)" placeholder="Buscar por país..."
+      [initialValue]="initialValue"></shared-search-box>
   </article>
 
   <article class="relative w-full">
